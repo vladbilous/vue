@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lesson 1</title>
+
+    <style>
+        .base-class-1 {
+            color: red;
+        }
+    </style>
+
+</head>
+<body>
+
+
+<div id="app">
+
+    <!--    v-bind прив'язка свойств vue-->
+    <h1 v-bind:class="`${baseClass}1`" v-bind:data-test="myDataAttr">hello vue!</h1>
+
+    <h2 v-bind="attrs">test bind attrib</h2>
+
+    <!--    условна отрисовка-->
+    <div v-if="vIf">dir vIf</div>
+    <div v-else-if="vElseIf">dir vElseIf </div>
+    <div v-else> dir vElse</div>
+
+    <div v-show="vShow"> test v-show</div>
+
+    <!--    v-for - цикл отрисовка списку-->
+    <ul>
+        <li v-for="item in frameworks">{{ item }}</li>
+    </ul>
+
+    <button type="button" v-on:click="vIf =! vIf">on/of vIf</button>
+    <button type="button" v-on:click="vElse =! vElse"> on/of vElse</button>
+
+    <input type="text" v-on:input="data = $event.target.value">
+    <p>{{ data }}</p>
+
+<!--    интерполяция-->
+    <p>{{ num1 + num2 }} </p>
+
+<!--    innerHtml & innerText-->
+    <p v-html="innerHtml"></p>
+    <p v-text="innerHtml"></p>
+
+<!--    v-model - робота з формами-->
+    <input type="text" v-model.trim="testModel">
+    <p>{{ testModel }}</p>
+
+    <input id="testCheckbox" type="checkbox" value="ch1" v-model="testCheckbox">
+    <label for="testCheckbox"> test it</label>
+    <input id="testCheckbox1" type="checkbox" value="ch2" v-model="testCheckbox">
+    <label for="testCheckbox1"> test it</label>
+    <input id="testCheckbox2" type="checkbox" value="ch3" v-model="testCheckbox">
+    <label for="testCheckbox2"> test it</label>
+    <input id="testCheckbox3" type="checkbox" value="ch4" v-model="testCheckbox">
+    <label for="testCheckbox3"> test it</label>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
