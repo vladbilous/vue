@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lesson 2</title>
+    <style>
+        .red {
+            color: red;
+        }
+        .blue {
+            color: blue;
+        }
+
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+
+        <h1 :[attr.name]="attr.value">Hello vue</h1>
+        <div v-bind="myAttr"> dinamyc attributes</div>
+        <div :class="`${isClass ? 'red' : 'blue'}`"> dinamyc attributes</div>
+        <div :class="{
+            red: isClass
+        }"> dinamyc attributes</div>
+
+<!--        <button type="submit" v-on="">click me</button>-->
+        <button type="submit" @click.prevent="clickHundler">click me</button>
+        <br><br>
+        <a href="google.com" @click.stop>google</a>
+        <br><br>
+
+<!--        вичисляємі свойства-->
+        <span>{{ myCompTest }}</span>
+        <br>
+        <input type="text" v-model="forComputed">
+        <p>{{forComputed}}</p>
+        <br>
+        <input type="text" v-model="testWatch.attr1">
+        <p>{{forComputed}}</p>
+
+        <global-btb></global-btb>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="components/globalBtn.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
