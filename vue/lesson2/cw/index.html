@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>lesson 2</title>
     <style>
         .red {
@@ -30,7 +31,7 @@
         }"> dinamyc attributes</div>
 
 <!--        <button type="submit" v-on="">click me</button>-->
-        <button type="submit" @click.prevent="clickHundler">click me</button>
+        <button type="submit" @click.prevent="clickHandler">click me</button>
         <br><br>
         <a href="google.com" @click.stop>google</a>
         <br><br>
@@ -42,14 +43,36 @@
         <p>{{forComputed}}</p>
         <br>
         <input type="text" v-model="testWatch.attr1">
-        <p>{{forComputed}}</p>
+        <p>{{testWatch.attr1}}</p>
 
-        <global-btb></global-btb>
+
+        <global-btn name="my btn"></global-btn>
+        <br>
+
+        <my-local-btn :name="testWatch.attr1" @click-sintetic="clickHandler"></my-local-btn>
+        <br>
+
+        <my-local-btn name="test native" @click.native="clickHandler"></my-local-btn>
+        <br>
+        <br>
+
+<!--        <guests-wrap></guests-wrap>-->
+        <g-w></g-w>
+
+        <br>
+        <news></news>
+
 
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="components/globalBtn.js"></script>
+    <script src="components/localBtn.js"></script>
+    <script src="components/news/news-card.js"></script>
+    <script src="components/news/news.js"></script>
+    <script src="guests.js"></script>
+    <script src="components/guests/guest-card.js"></script>
+    <script src="components/guests/guests-wrap.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

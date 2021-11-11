@@ -1,4 +1,4 @@
-Vue.comonent('GlobalBtn', {
+Vue.component('GlobalBtn', {
     // props: ['someProps']
     props: {
         name: {

@@ -3,6 +3,12 @@
 
 const app = new Vue({
     el: '#app',
+    components: {
+        'MyLocalBtn': localBtn,
+        'GW': GuestsWrap,
+        'News': News
+
+    },
     data: {
         attr: {
             name: 'data-test',
@@ -57,8 +63,9 @@ const app = new Vue({
     //     document.removeEventListener('scroll', someMethod)
     // },
     methods: {
-        clickHundler() {
-            alert(this.myCompTest)
+        clickHandler(val) {
+            this.testWatch.attr1 = val
+            alert(val)
         }
     }
 
