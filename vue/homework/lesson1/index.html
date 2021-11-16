@@ -30,6 +30,9 @@
         .author span:last-child, .author-vue span:last-child {
             border-right: none;
         }
+        .actors-vue li {
+            color: black;
+        }
 
     </style>
 </head>
@@ -59,28 +62,35 @@
         <h2>Vue</h2>
 
         <div class="author-vue">
-            <span id="stranger-vue" class="stranger-vue ">Чужой</span>
-            <span id="potter-vue" class="potter-vue"> Гарри Поттер и философский камень</span>
-            <span id="matrix-vue" class="matrix-vue">Матрица </span>
+<!--            <button type="button" v-on:click="vIf =! vIf">on/of vIf</button>-->
+
+<!--            <span class="films" v-for="film in films">{{ film }}</span>-->
+<!--            <button type="button" v-on:click="vElse =! vElse"> on/of vElse</button>-->
+            <button type="button" v-on:click="actors = strangerH"> Чужой</button>
+            <button type="button" v-on:click="actors = potterH"> Гарри Поттер и философский камень</button>
+            <button type="button" v-on:click="actors = matrixH"> Матрица</button>
+
         </div>
 
         <br>
-        <div id="actors-block-vue" class="red-vue">
+        <div id="actors-block-vue" v:bind:class="color">
+
             <ul class="actors-vue">
-
+                <li v-for="act in actors "> {{ act }}</li>
             </ul>
+
         </div>
 
         <br>
         <br>
-        <button id="red-vue" type="button">bg-red</button>
-        <button id="blue-vue" type="button">bg-blue</button>
-        <button id="green-vue" type="button">bg-green</button>
+        <button v-on:click="color" id="red-vue" type="button">bg-red</button>
+        <button v-on:click="color = 'blue'" id="blue-vue" type="button">bg-blue</button>
+        <button v-on:click="color = green" id="green-vue" type="button">bg-green</button>
 
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="main.js"></script>
-    <script src="vue-script.js"></script>
+    <script src="vue-main.js"></script>
 </body>
 </html>
