@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework2-1</title>
+</head>
+<body>
+<!--// 1-->
+<!--// Список гостей:-->
+<!--// - инпут для поиска гостей (поиск по полю name)-->
+<!--// - получить список гостей с guests.json-->
+<!--// - вывести список гостей-->
+<!--// - компонент одного гостя-->
+<!--// - чекбокс - отмечает прибытие гостя, накладываются стили ( например - вычеркивается)-->
+<!--// - кнопка "прибывшие" - выводит список всех прибывших гостей-->
+<!--// - кнопка "отсутствуют" - выводит список всех отсутствующих гостей-->
+
+<div id="app">
+    <input type="text" placeholder="search name guest">
+
+    <guest></guest>
+
+</div>
+
+<script src="guests.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="components/guest-card.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
