@@ -30,14 +30,13 @@
         .author span:last-child, .author-vue span:last-child {
             border-right: none;
         }
-        .actors-vue li {
-            color: black;
-        }
 
     </style>
 </head>
 <body>
     <h1> Homework 1</h1>
+
+<!--  Задача1  Вирішення на js-->
     <h2>Js</h2>
     <div class="author">
         <span id="stranger" class="stranger ">Чужой</span>
@@ -58,7 +57,8 @@
     <button id="blue" type="button">bg-blue</button>
     <button id="green" type="button">bg-green</button>
 
-    <div id="app">
+    <!--  Задача1  Вирішення на vue-->
+    <div id="tabs">
         <h2>Vue</h2>
 
         <div class="author-vue">
@@ -73,7 +73,7 @@
         </div>
 
         <br>
-        <div id="actors-block-vue" v:bind:class="color">
+        <div id="actors-block-vue" v-bind:class="color">
 
             <ul class="actors-vue">
                 <li v-for="act in actors "> {{ act }}</li>
@@ -83,11 +83,12 @@
 
         <br>
         <br>
-        <button v-on:click="color" id="red-vue" type="button">bg-red</button>
+        <button v-on:click="color = 'red'" id="red-vue" type="button">bg-red</button>
         <button v-on:click="color = 'blue'" id="blue-vue" type="button">bg-blue</button>
-        <button v-on:click="color = green" id="green-vue" type="button">bg-green</button>
+        <button v-on:click="color = 'green'" id="green-vue" type="button">bg-green</button>
 
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="main.js"></script>

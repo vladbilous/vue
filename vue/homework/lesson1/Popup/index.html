@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Popup</title>
+
+    <style>
+        .red {
+            background-color: red;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .green {
+            background-color: green;
+        }
+        .popup__text p{
+            color: white;
+        }
+        .popup__text {
+            padding: 20px;
+            height: fit-content;
+            width: 242px;
+            margin: auto;
+            z-index: 5;
+            position: relative;
+            top: 100px;
+            border: 1px solid black;
+        }
+        .popup-bg {
+            background-color: rgba(128, 128, 128, 0.69);
+            height: 100vh;
+            width: 100%;
+            position: absolute;
+        }
+        .open-popup {
+            position: absolute;
+            z-index: -1;
+        }
+        .close-popup {
+            margin-left: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="popup">
+    <button class="open-popup" type="button" v-on:click="popup=true">Open popup</button>
+
+    <div class="popup-content" v-show="popup" >
+        <div class="popup-bg" v-on:click="popup=false"></div>
+        <div class="popup__text" v-bind:class="color">
+            <button v-on:click="color = 'red'" type="button">bg-red</button>
+            <button v-on:click="color = 'blue'" type="button">bg-blue</button>
+            <button v-on:click="color = 'green'" type="button">bg-green</button>
+            <button class="close-popup" v-on:click="popup=false">X</button>
+
+            <p>1) kasdm kadsk ams dkaskd k</p>
+            <p>2) kasdm kadsk ams dkaskd as das dasd asd k</p>
+            <p>3) kasdm kadsk ams dkaskd as das dasd asd k asd asd ad</p>
+            <p>4) kasdm kadsk ams dkaskd as das dasd asd k asd asd ad as dasdasd</p>
+            <p>5) kasdm kadsk ams dkaskd as das dasd asd k asd asd ad as dasdasd</p>
+
+        </div>
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+<script src="main.js"></script>
+
+</body>
+</html>
