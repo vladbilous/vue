@@ -1,5 +1,5 @@
-const guestCard = {
-    name: 'guestCard',
+const GuestCard = {
+    name: 'GuestCard',
     props: {
         guest: {
             type: Object,
@@ -14,7 +14,11 @@ const guestCard = {
     template: `
         <p>
             <div >
-                {{guest.name}}
+                    <guest-card 
+                        v-for="guest in guests" 
+                        :key="guest['_id']"
+                        :guest="guest"
+                    />
             </div>
             
         </p>
