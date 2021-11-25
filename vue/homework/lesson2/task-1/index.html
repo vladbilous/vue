@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Homework2-1</title>
+    <title>Homework2</title>
 </head>
 <body>
 <!--// 1-->
@@ -18,16 +18,40 @@
 <!--// - кнопка "прибывшие" - выводит список всех прибывших гостей-->
 <!--// - кнопка "отсутствуют" - выводит список всех отсутствующих гостей-->
 
+
+<style>
+    .done {
+        text-decoration: line-through;
+    }
+</style>
+
 <div id="app">
     <input type="text" placeholder="search name guest">
 
-    <guest></guest>
+    <h1>{{title}}</h1>
+    <div>
+        <button value="all" type="button">all</button>
+        <button @click="people('present')">Present</button>
+
+        <button value="present" type="button">present</button>
+        <button value="missing" type="button">missing</button>
+
+
+    </div>
+    <div >
+        <guest
+            v-for="(guest, index) in guestsList"
+            v-if="index < number"
+            v-bind:guest="guest"
+        ></guest>
+    </div>
+
 
 </div>
 
 <script src="guests.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-<script src="components/guest-card.js"></script>
+<script src="components/guest-wrap.js"></script>
 <script src="main.js"></script>
 
 </body>
