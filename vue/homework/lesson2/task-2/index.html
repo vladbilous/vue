@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>homework2 task2</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!--// Вывести превю новостей.-->
+<!--// - в хуке created получить посты с https://jsonplaceholder.typicode.com/posts-->
+<!--// - Создать компонент одной новости-->
+<!--// - прелоадер-->
+<!--// - вывести циклом новости-->
+    <div id="app">
+        <preloader v-if="preloaderTrue" :time="time"></preloader>
+        <div v-if="contentFalse">
+            <p>News List </p>
+            <div>
+                <news-data v-for="view in news" :data="view"></news-data>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="components/preloader.js"></script>
+    <script src="components/newsData.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

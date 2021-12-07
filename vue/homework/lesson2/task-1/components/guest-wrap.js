@@ -10,6 +10,7 @@ const GuestWrap = {
             default: false
         }
     },
+
     // data() {
     //     return {
     //         defaultData: ""
@@ -24,8 +25,12 @@ const GuestWrap = {
                 v-on:change="completed = !completed"
                 @change="guest.isPresent = !guest.isPresent" 
                 >
-                    <span>{{ guest.index + 1 }})</span>
-                    <span>{{ guest.name }}</span>
+                    <b>{{ guest.index + 1 }})</b>
+                    <b>{{ guest.name }},</b>
+                    <span>"{{ guest.company }}",</span>
+                    <span>"{{ guest.email }}",</span>
+                    <span>"{{ guest.phone }}",</span>
+                    <span>"{{ guest.address }}"</span>
                 </div>
             </div>
         </div>

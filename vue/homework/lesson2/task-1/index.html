@@ -5,45 +5,38 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Homework2</title>
+    <title>homework2 task1</title>
 </head>
 <body>
-<!--// 1-->
-<!--// Список гостей:-->
-<!--// - инпут для поиска гостей (поиск по полю name)-->
-<!--// - получить список гостей с guests.json-->
-<!--// - вывести список гостей-->
-<!--// - компонент одного гостя-->
-<!--// - чекбокс - отмечает прибытие гостя, накладываются стили ( например - вычеркивается)-->
-<!--// - кнопка "прибывшие" - выводит список всех прибывших гостей-->
-<!--// - кнопка "отсутствуют" - выводит список всех отсутствующих гостей-->
-
-
 <style>
     .done {
         text-decoration: line-through;
     }
+    b {
+        font-weight: 600;
+    }
 </style>
 
 <div id="app">
-    <input type="text" placeholder="search name guest">
+    <span>Write name, company, email, phone or address of the guests. <br>You are searching for  <b>{{activeCategory}}.</b></span><br>
+    <input type="text" v-model = "search" placeholder="search name guest">
 
     <h1>{{title}}</h1>
     <div>
-        <button value="all" type="button">all</button>
+        <button @click="people()" value="all" type="button">all</button>
         <button @click="people('present')" type="button">present</button>
-        <button value="missing" type="button">missing</button>
-
-
+        <button @click="people('absent')" value="missing" type="button">absent</button>
+        <button @click="people('else')">+10</button>
     </div>
     <div >
+        Count of results: {{searchResults.length}}
+
         <guest
-            v-for="(guest, index) in guestsList"
+            v-for="(guest, index) in guestsListSearch"
             v-if="index < number"
             v-bind:guest="guest"
         ></guest>
     </div>
-
 
 </div>
 
