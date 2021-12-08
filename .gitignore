@@ -1,0 +1,5 @@
+.DS_Store
+.idea
+vue/lesson3/test-cli/node_modules
+vue/homework/lesson3/node_modules
+vue/.idea

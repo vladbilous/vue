@@ -1,1 +1,10 @@
 всі методи з коробки vue ідуть через знак $
+
+
+lesson 3 (установка vue cli):
+через cmd - зручніше
+1) npm install -g @vue/cli
+2) vue --version
+node version 8.9+
+3) vue create [project_name]
+4) npm run serve
